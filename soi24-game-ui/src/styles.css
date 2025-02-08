@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+@keyframes ballAnimation {
+    100% {
+        cx: var(--ball-end-x);
+        cy: var(--ball-end-y);
+    }
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url('../img/miniera.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Occures on the ball when there's a Goal */
+@keyframes winBallAnimation {
+    0%, 100% {
+        opacity: 1;
+        fill: var(--color-winner-team);
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Occures on players which make Goal */
+@keyframes winPlayerAnimation {
+    0%, 100% {
+        fill: var(--color-player);
+    }
+    50% {
+        filter: drop-shadow(0 0 10px var(--color-player));
+        fill: var(--color-player);
+    }
+}
+
+/* Goal banner */
+
+.goalBanner {
+    animation: goalBannerAnimation 1.5s infinite;
+}
+
+
+@keyframes goalBannerAnimation {
+    0%, 100% {
+        transform: translate(-50%, 0%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, 0%) scale(1.2);
+    }
+}
